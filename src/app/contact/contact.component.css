@@ -1,0 +1,55 @@
+
+.mr-4{
+	color: #f0f8ff !important;
+}
+.fa-comment{
+	color: #546d6e !important;
+}
+.fa-envelope{
+	color: #546d6e !important;
+}
+
+.fa-user{
+	color: #546d6e !important;
+}
+.border-primary{
+	border:none;}
+.btn-md{
+	color: #f0f8ff;
+	
+	
+}
+.modal-footer{
+	background-color: #1a1a1a !important;
+	
+}
+.bg-info{
+	background: linear-gradient(to right, rgb(87, 113, 114) 0%, rgba(58,76,77,1.00) 100%);
+	border-color: linear-gradient(to right, rgb(87, 113, 114) 0%, rgba(58,76,77,1.00) 100%);
+	border-radius: 5px !important;
+	
+	
+}
+.btn-md{
+	color: #f0f8ff;
+	
+	
+}
+.btn2:hover{
+	background: rgba(58,76,77,1.00);
+	color: blanchedalmond;
+}
+.btn2{
+	background: linear-gradient(to right, rgb(87, 113, 114) 0%, rgba(58,76,77,1.00) 100%);
+	border:none;
+	border-radius: 5px !important;
+}
+
+
+.jumbotron{
+	background: linear-gradient(to right, rgb(87, 113, 114) 0%, rgba(58,76,77,1.00) 100%);
+	color: aliceblue;
+	text-align: center !important;
+}
+
+

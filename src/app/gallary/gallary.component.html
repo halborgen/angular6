@@ -1,0 +1,44 @@
+ 
+<div class="container">
+  <div class="row">
+	 <section class="content-section bg-light">
+    <!--<h1>{{ testData[0].ProductName }}</h1>-->
+    <div *ngFor="let product of testData ; let i = index" class="border rounded p-3 m-2">
+		<img src="{{ product.Image }}" alt="" height="150px;" width="150px;"/><br>
+      <h4>{{ product.ProductName }}</h4>
+      <p>{{ product.QuantityPerUnit }}</p>
+      <p>{{ product.UnitPrice }}</p>
+      <!--<button (click)="checkStock(product)" class="btn btn-primary">Check Availability</button>-->
+      <button class="btn btn-dark" data-toggle="modal" [attr.data-target]="'#prod-' + i">See more</button>
+      <!-- Modal -->
+      <div class="modal fade" [attr.id]="'prod-' + i" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">{{ product.ProductName }}</h5>
+            </div>
+            <div class="modal-body">
+  				 
+			  <div *ngIf="product.Available>0;else other_content" > Yes!
+				  {{product.Available }} units in stock. </div> <br>
+				<button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>&nbsp;&nbsp;&nbsp;&nbsp;
+				<button type="button" class="btn btn-dark" date-open="modal">Next</button>
+				<ng-template #other_content>Not in stock.. <br></ng-template>
+			  </div>
+			  
+     
+
+
+            <div class="modal-footer">
+				<img src="{{ product.Image }}" alt="" class="center" >
+            </div>
+          </div>
+        </div>
+        <!-- Modal: -->
+      </div>
+    </div>
+    <!-- row: --> 
+	  </section>
+  </div>
+  <!-- container: --> 
+</div>

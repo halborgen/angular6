@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row"> 
+    <!--<h1>{{ testData[0].ProductName }}</h1>-->
+    <div *ngFor="let product of testData ; let i = index" class="border rounded p-3 m-2">
+		<a href="" data-toggle="modal" [attr.data-target]="'#prod-' + i">
+		<img src="{{ product.Image }}" alt="" height="150px;" width="150px;"   /></a><br><br>
+      <h4>{{ product.ProductName }}</h4>
+      <p>{{ product.QuantityPerUnit }}</p>
+      <p>{{ product.UnitPrice }}</p>
+      <!--<button (click)="checkStock(product)" class="btn btn-primary">Check Availability</button>-->
+		<div class="centerknap">
+      <button class="btn btn-dark" data-toggle="modal" [attr.data-target]="'#prod-' + i">See more</button></div>
+      <!-- Modal -->
+      <div class="modal fade" [attr.id]="'prod-' + i" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">{{ product.ProductName }}</h5>
+            </div>
+            <div class="modal-body">
+  				 
+			  <div *ngIf="product.Available>0;else other_content" >
+				  {{product.Btext }} units in stock. </div> <br>
+				<button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>&nbsp;&nbsp;&nbsp;&nbsp;
+				<button type="button" class="btn btn-dark" date-open="modal">Next</button>
+				<ng-template #other_content>Not in stock.. <br></ng-template>
+			  </div>
+			  
+     
+
+
+            <div class="modal-footer">
+				<img src="{{ product.Image }}" alt="" class="center" >
+            </div>
+          </div>
+        </div>
+        <!-- Modal: -->
+      </div>
+    </div>
+    <!-- row: --> 
+  </div>
+  <!-- container: --> 
+</div>
